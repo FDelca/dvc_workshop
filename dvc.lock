@@ -107,15 +107,15 @@ stages:
         train:
           test_size: 0.2
           learning_rate: 0.05
-          epochs: 3
+          epochs: 10
           batch_size: 20
     outs:
     - path: outputs/model/saved_model.pb
-      md5: a512535e9c3cb8ae1d96ce6b5207704c
+      md5: d54569a0a0c5827f87f307b97e26e773
       size: 194486
     - path: outputs/train_history.png
-      md5: 2369506f135729d3fd1685d788da080c
-      size: 33284
+      md5: fe7d830253afbb4fdc081297f96e5079
+      size: 31048
   evaluate:
     cmd: python src/evaluate.py --params params.yaml
     deps:
@@ -123,11 +123,11 @@ stages:
       md5: deedfd296f79a4cd7e3ed78450e75376
       size: 17309
     - path: outputs/model/saved_model.pb
-      md5: a512535e9c3cb8ae1d96ce6b5207704c
+      md5: d54569a0a0c5827f87f307b97e26e773
       size: 194486
     - path: outputs/train_history.png
-      md5: 2369506f135729d3fd1685d788da080c
-      size: 33284
+      md5: fe7d830253afbb4fdc081297f96e5079
+      size: 31048
     params:
       params.yaml:
         base:
@@ -135,8 +135,8 @@ stages:
           pokemon_type_train: Bug
     outs:
     - path: outputs/confusion_matrix.png
-      md5: d135fab483cf693e25d899d4e3818484
-      size: 23025
+      md5: a241c1ac4bb2ff658d2f6b7e8f5fb1c5
+      size: 23036
     - path: outputs/metrics.yaml
-      md5: cfd8bef121c7d2dce1c52daddd49d07f
-      size: 59
+      md5: ce6e32cfa0b866999f4f567427ce6e46
+      size: 92
