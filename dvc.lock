@@ -17,7 +17,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Bug
+          pokemon_type_train: Water
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -51,7 +51,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Bug
+          pokemon_type_train: Water
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -62,35 +62,35 @@ stages:
       md5: 8f6555c6159e27739fd97a61ace395a4
       size: 2891610169
     - path: data/processed/X_test.pckl
-      md5: 98948253c7ac01bb980a44f566a2f1aa
+      md5: 23c3aa551e6826615b71e592972997a8
       size: 581210168
     - path: data/processed/X_train.pckl
-      md5: 7c8523405923e481173f822ca2d44b4a
+      md5: 364b2c4e8fe73f88a79ef5da6416abac
       size: 2310400169
     - path: data/processed/y.pckl
-      md5: 685221d813697fe4997f5ba144d78874
-      size: 7070
+      md5: f156295a269847ea043fff40f8cca0a7
+      size: 7072
     - path: data/processed/y_test.pckl
-      md5: 1763424de90f2e88756b520db84ba6d8
-      size: 3245
+      md5: 05695e9b10f3c84048b6c6d0af01bd30
+      size: 3247
     - path: data/processed/y_train.pckl
-      md5: 0ab4894cecbc521fd65935555ece14c9
-      size: 10911
+      md5: 25b4a8bb684e918396014650bfcfeffd
+      size: 10913
   train:
     cmd: python src/train.py --params params.yaml
     deps:
     - path: data/processed/X_test.pckl
-      md5: 98948253c7ac01bb980a44f566a2f1aa
+      md5: 23c3aa551e6826615b71e592972997a8
       size: 581210168
     - path: data/processed/X_train.pckl
-      md5: 7c8523405923e481173f822ca2d44b4a
+      md5: 364b2c4e8fe73f88a79ef5da6416abac
       size: 2310400169
     - path: data/processed/y_test.pckl
-      md5: 1763424de90f2e88756b520db84ba6d8
-      size: 3245
+      md5: 05695e9b10f3c84048b6c6d0af01bd30
+      size: 3247
     - path: data/processed/y_train.pckl
-      md5: 0ab4894cecbc521fd65935555ece14c9
-      size: 10911
+      md5: 25b4a8bb684e918396014650bfcfeffd
+      size: 10913
     - path: src/train.py
       md5: 2e27bad38686ee3ea9fe60eec0983c94
       size: 4339
@@ -98,7 +98,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Bug
+          pokemon_type_train: Water
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -114,8 +114,8 @@ stages:
       md5: d54569a0a0c5827f87f307b97e26e773
       size: 194486
     - path: outputs/train_history.png
-      md5: fe7d830253afbb4fdc081297f96e5079
-      size: 31048
+      md5: 66677f2091792a521c062f174eed5d4d
+      size: 29836
   evaluate:
     cmd: python src/evaluate.py --params params.yaml
     deps:
@@ -126,17 +126,17 @@ stages:
       md5: d54569a0a0c5827f87f307b97e26e773
       size: 194486
     - path: outputs/train_history.png
-      md5: fe7d830253afbb4fdc081297f96e5079
-      size: 31048
+      md5: 66677f2091792a521c062f174eed5d4d
+      size: 29836
     params:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Bug
+          pokemon_type_train: Water
     outs:
     - path: outputs/confusion_matrix.png
-      md5: a241c1ac4bb2ff658d2f6b7e8f5fb1c5
-      size: 23036
+      md5: 0bd9cc833fec33da2c38fe566db4622f
+      size: 22339
     - path: outputs/metrics.yaml
-      md5: ce6e32cfa0b866999f4f567427ce6e46
-      size: 92
+      md5: 757c9d2c9f398c268e1e770cdaeca70f
+      size: 57
