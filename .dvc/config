@@ -1,0 +1,7 @@
+[core]
+    remote = remote_ubuntu
+    autostage = true
+['remote "remote1"']
+    url = gdrive://1YUZfk0YYhhAd_6b3k75v7K36iKJdytWS/dvcstore
+['remote "remote_ubuntu"']
+    url = gdrive://1k7fE17R8aAMMK7_CStSAHqzTdjpkZMZZ
