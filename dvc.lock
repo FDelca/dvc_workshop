@@ -17,7 +17,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Dragon
+          pokemon_type_train: Bug
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -51,7 +51,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Dragon
+          pokemon_type_train: Bug
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -62,35 +62,35 @@ stages:
       md5: 8f6555c6159e27739fd97a61ace395a4
       size: 2891610169
     - path: data/processed/X_test.pckl
-      md5: 4e11c60b9a929fc30f25b7a478ca60b6
+      md5: 98948253c7ac01bb980a44f566a2f1aa
       size: 581210168
     - path: data/processed/X_train.pckl
-      md5: e7bcb4d9113bce537fc454db4bb4a5f4
+      md5: 7c8523405923e481173f822ca2d44b4a
       size: 2310400169
     - path: data/processed/y.pckl
-      md5: 36a6a2c5b8ee9201257c99762d105ab2
-      size: 7073
+      md5: 685221d813697fe4997f5ba144d78874
+      size: 7070
     - path: data/processed/y_test.pckl
-      md5: 763d8277cd61dc8347fd3e6449ea7efd
-      size: 3248
+      md5: 1763424de90f2e88756b520db84ba6d8
+      size: 3245
     - path: data/processed/y_train.pckl
-      md5: c8135ca15906dfb1766cbae114320985
-      size: 10914
+      md5: 0ab4894cecbc521fd65935555ece14c9
+      size: 10911
   train:
     cmd: python src/train.py --params params.yaml
     deps:
     - path: data/processed/X_test.pckl
-      md5: 4e11c60b9a929fc30f25b7a478ca60b6
+      md5: 98948253c7ac01bb980a44f566a2f1aa
       size: 581210168
     - path: data/processed/X_train.pckl
-      md5: e7bcb4d9113bce537fc454db4bb4a5f4
+      md5: 7c8523405923e481173f822ca2d44b4a
       size: 2310400169
     - path: data/processed/y_test.pckl
-      md5: 763d8277cd61dc8347fd3e6449ea7efd
-      size: 3248
+      md5: 1763424de90f2e88756b520db84ba6d8
+      size: 3245
     - path: data/processed/y_train.pckl
-      md5: c8135ca15906dfb1766cbae114320985
-      size: 10914
+      md5: 0ab4894cecbc521fd65935555ece14c9
+      size: 10911
     - path: src/train.py
       md5: 2e27bad38686ee3ea9fe60eec0983c94
       size: 4339
@@ -98,7 +98,7 @@ stages:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Dragon
+          pokemon_type_train: Bug
         data_preprocess:
           source_directory: data/external
           destination_directory: data/processed
@@ -114,8 +114,8 @@ stages:
       md5: a512535e9c3cb8ae1d96ce6b5207704c
       size: 194486
     - path: outputs/train_history.png
-      md5: 1ac6c9c4f494669b15922f94c7422935
-      size: 34681
+      md5: 2369506f135729d3fd1685d788da080c
+      size: 33284
   evaluate:
     cmd: python src/evaluate.py --params params.yaml
     deps:
@@ -126,17 +126,17 @@ stages:
       md5: a512535e9c3cb8ae1d96ce6b5207704c
       size: 194486
     - path: outputs/train_history.png
-      md5: 1ac6c9c4f494669b15922f94c7422935
-      size: 34681
+      md5: 2369506f135729d3fd1685d788da080c
+      size: 33284
     params:
       params.yaml:
         base:
           seed: 42
-          pokemon_type_train: Dragon
+          pokemon_type_train: Bug
     outs:
     - path: outputs/confusion_matrix.png
-      md5: 958d1139f2bf69d839a76db523f4b0c7
-      size: 22944
+      md5: d135fab483cf693e25d899d4e3818484
+      size: 23025
     - path: outputs/metrics.yaml
-      md5: 691b664c563e658f25bbb835e1c2634e
-      size: 92
+      md5: cfd8bef121c7d2dce1c52daddd49d07f
+      size: 59

@@ -1,6 +1,6 @@
 base:
   seed: 42
-  pokemon_type_train: Dragon
+  pokemon_type_train: Bug
 
 data_preprocess:
   source_directory: data/external
